@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritik Verma - Profile Card</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 320px;
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(79, 209, 197, 0.5);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 2rem rgba(79, 209, 197, 0.2);
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('/profileCard1/pc1.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            border: 3px solid #4fd1c5;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+
+        .name {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s;
+        }
+
+        .name:hover {
+            color: #4fd1c5;
+        }
+
+        .bio {
+            color: #e2e8f0;
+            font-size: 0.875rem;
+            white-space: pre-line;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .skills-title {
+            color: #cbd5e0;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .skill-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .skill {
+            background-color: rgba(79, 209, 197, 0.1);
+            color: #e2e8f0;
+            padding: 0.375rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(79, 209, 197, 0.2);
+        }
+
+        .skill:hover {
+            background-color: rgba(79, 209, 197, 0.2);
+            transform: scale(1.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            color: #4fd1c5;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            color: white;
+            transform: scale(1.25);
+        }
+
+        .social-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="profile">
+                <img src="/profileCard1/Rv.jpg" alt="Ritik Verma" class="profile-img">
+                <h2 class="name">Ritik Verma</h2>
+                <p class="bio">📍 B.Tech | Computer Science & Engineering 
+                    (3rd Year)
+💻 Specialized in Backend Development</p>
+            </div>
+
+            <div class="skills-title">SKILLS</div>
+            <div class="skills">
+                <div class="skill-row">
+                    <span class="skill">Java</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">Spring Boot</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill">Spring Security</span>
+                    <span class="skill">Hibernate</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill">PostgreSQL</span>
+                    <span class="skill">RESTful APIs</span>
+                </div>
+                <div class="skill-row">
+                    <span class="skill">Microservices</span>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

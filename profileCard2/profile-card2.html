@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 1rem;
+        }
+
+        .card-container {
+            position: relative;
+            width: 370px;
+        }
+
+
+        .card {
+            position: relative;
+            z-index: 10;
+            height: 578px;
+            border-radius: 1rem;
+            border: 1px solid rgba(0, 255, 213, 0.3);
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            transition: opacity 0.2s ease-in-out;
+            background-image: url('pc2.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(1px);
+            z-index: -1;
+        }
+
+        .card:hover::before {
+            opacity: 0.25;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 255, 213, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+            padding: 1.5rem;
+        }
+
+
+        .profile-image {
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(0, 255, 213, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image:hover {
+            border-color: rgba(0, 255, 213, 0.5);
+            box-shadow: 0 0 15px rgba(0, 255, 213, 0.15);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .content {
+            text-align: center;
+            padding: 0 0.5rem;
+        }
+
+        .name {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .name:hover {
+            color: #00ffd5;
+        }
+
+        .description {
+            color: #00ffd5;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .description:hover {
+            opacity: 0.8;
+        }
+
+        .skills {
+            margin-top: 1rem;
+            padding: 0 0.5rem;
+        }
+
+        .skills-title {
+            color: white;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .skills-title:hover {
+            color: #00ffd5;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .skill {
+            color: #00ffd5;
+            font-size: 0.75rem;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(0, 255, 213, 0.3);
+            background-color: rgba(0, 255, 213, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skill:hover {
+            background-color: rgba(0, 255, 213, 0.2);
+            border-color: rgba(0, 255, 213, 0.5);
+            box-shadow: 0 0 10px rgba(0, 255, 213, 0.15);
+            transform: scale(1.05);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .social-link {
+            color: #00ffd5;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: white;
+            transform: scale(1.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                
+                <div class="profile-image">
+                    <img src="Rv.jpg" alt="Profile">
+                </div>
+                
+                <div class="content">
+                    <h2 class="name">Ritik Verma</h2>
+                    <p class="description">📍 B.Tech | Computer Science & Engineering (3rd Year)</p>
+                    <p class="description">💻 Specialized in Backend Development</p>
+                    
+                    <div class="skills">
+                        <h3 class="skills-title">SKILLS</h3>
+                        <div class="skills-container">
+                            <span class="skill">Java</span>
+                            <span class="skill">Python</span>
+                            <span class="skill">Spring Boot</span>
+                            <span class="skill">Spring Security</span>
+                            <span class="skill">Hibernate</span>
+                            <span class="skill">PostgreSQL</span>
+                            <span class="skill">RESTful APIs</span>
+                            <span class="skill">Microservices</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
